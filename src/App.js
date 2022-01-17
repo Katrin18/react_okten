@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import './App.css';
+import UserDetails from "./components/userDetails/UserDetails";
+import Users from "./components/users/Users";
+import Posts from "./components/posts/Posts";
+import {useState} from "react";
+import {postService} from "./services/post.service";
+
+const App = () => {
+
+    const [user, setUser] = useState([]);
+    const [userId, setUserId] = useState([]);
+    const [posts, setPosts] = useState([]);
+
+    const getUser = (user) => {
+        setUser(user)
+        setPosts([])
+    }
+    const getUserId = (id) => {
+        postService.getPosts(id).then(value => setPosts([...value]))
+    }
+    return (
+        <div>
+            <div className="wrap">
+                <Users getUser={getUser}/>
+                {user && <UserDetails user={user} getUserId={getUserId}/>}
+            </div>
+            {!!posts.length && <Posts posts={posts}/>}
+        </div>
+    );
+};
 
 export default App;
