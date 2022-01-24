@@ -1,0 +1,36 @@
+.wrap {
+    text-align: center;
+    min-height: 80px;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.wrap a{
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+.wrap a[class='active']{
+    text-decoration: white;
+    color: pink;
+}
+.footer{
+    min-height: 20px;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: right;
+    padding-right: 20px;
+}
+.outlet{
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow-y: auto;
+    display: flex;
+
+}
+

@@ -1,0 +1,11 @@
+.outletUser{
+    display: flex;
+    background: pink;
+}
+.singleUser{
+    display: flex;
+    background: pink;
+}
+.users{
+    display: flex;
+}
