@@ -4,10 +4,12 @@ const App = () => {
 
     return (
         <div>
-            <Form/>
-            <Cars/>
+        <Form/>
+        <Cars/>
+
         </div>
     );
 };
 
 export default App;
+
